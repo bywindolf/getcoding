@@ -1,0 +1,74 @@
+:root {
+  /* Need to discuss with designer. To find a good ratio here, using 1.25 for now based on 20 +5 -2 */
+
+  /* Utopa */
+  --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+  --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+  --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+  --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+
+  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+  --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
+  --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
+  --space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+  --space-l: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
+  --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem);
+  --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem);
+  --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
+
+  /* Font related */
+  --font-base-size: var(--step-0); /* To have a handy name for base */
+  --font-family-sans: 'Roboto', Arial, sans-serif;
+  --body-line-height: 1.4;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-canvas: #f8f8f8;
+  --color-primary: #5b2e48;
+  --color-secondary: #587291;
+  --color-mono-0: #f2f2f2;
+  --color-mono-100: #dcdcdc;
+  --color-mono-900: #111111;
+  
+
+  --backdrop-filter-color: hsla(0, 0%, 19%, 0.267);
+  --backdrop-filter-blur: 10px;
+
+  /* Shadow */
+  --box-shadow-x: 1px;
+  --box-shadow-y: 1px;
+  --box-shadow-blur: 8px;
+  --box-shadow-spread: 0px;
+  --box-shadow-color: var(--color-mono-100);
+
+  --btn-shadow-x: 0px;
+  --btn-shadow-y: 4px;
+  --btn-shadow-blur: 14px;
+  --btn-shadow-spread: 0px;
+  --btn-shadow-color: hsl(0, 0%, 0%, 0.25);
+
+  --main-nav-shadow: var(--box-shadow-x) var(--box-shadow-y) var(--box-shadow-blur) var(--box-shadow-color);
+  --btn-shadow: var(--btn-shadow-x) var(--btn-shadow-y) var(--btn-shadow-blur) var(--btn-shadow-color);
+
+  /* Responsive things */
+  --container-max-width: 800px;
+  --menu-flow: column;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+
+  --btn-padding-base: var(--space-xs) var(--space-s);
+  --btn-padding-md: var(--space-s) var(--space-m);
+
+  --gap: var(--space-m);
+  --main-menu-items-gap: var(--space-2xl); /* aprox 100px from Figma */
+
+  /* Elements */
+  --btn-border-radius: 0.625rem; /* 10 px, i would maybe stick to 8 or 12 */
+  --transitions-ms: 100ms;
+  --transitions-timing: ease-in-out;
+}

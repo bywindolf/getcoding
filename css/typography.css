@@ -1,0 +1,27 @@
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--step-0);
+  line-height: var(--body-line-height);
+}
+
+.main-menu a {
+  font-size: var(--step-0);
+}
+
+h1 {
+  font-size: var(--step-3);
+  font-weight: 400;
+  margin-block-end: var(--space-l);
+}
+
+.btn {
+  font-size: var(--step-2);
+}
+
+.footer-menu a {
+  font-size: var(--step-2);
+}
+
+.footer .copyright {
+  font-size: var(--step--1);
+}

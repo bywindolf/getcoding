@@ -1,0 +1,31 @@
+/* Been using SCSS since i dont know when... */
+/* Google Font Roboto, Hi again... */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+@import './reset.css'; /* Reset from Lecture */
+@import './variables.css'; /* Globals */
+@import './components.css';
+@import './layout.css';
+
+@import './typography.css';
+
+.sr-only {
+  display: none;
+}
+
+:is(a) {
+  --outline-size: max(2px, 0.18em);
+  --outline-style: solid;
+  --outline-color: currentColor;
+  --outline-offset: 0.18em;
+}
+
+:is(a):focus-visible {
+  outline: var(--outline-size) var(--outline-style) var(--outline-color);
+  outline-offset: var(--outline-offset, var(--outline-size));
+}
+
+body {
+  background-color: var(--color-canvas);
+}

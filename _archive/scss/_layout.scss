@@ -1,0 +1,43 @@
+:root {
+  --color-shit: brown;
+  --asd: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+  --font-base-size: 16px;
+  --font-family-sans: Arial;
+
+  --color-primary: red;
+  --color-secondary: green;
+
+  --color-mono-900: #000;
+  --container-max-width: 800px;
+  --menu-flow: column;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --menu-flow: row;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
+}
+
+.footer-menu {
+  grid-column: span 12;
+}
+
+.footer-nav {
+  grid-column: span 12;
+}
+
+@media (min-width: 800px) {
+  .main-nav {
+    padding: 1rem;
+  }
+  .footer-nav {
+    grid-column: 9 / span 4;
+  }
+}

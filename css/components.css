@@ -1,0 +1,136 @@
+/* Main Nav Components */
+.main-nav {
+  position: relative;
+  display: block;
+  box-shadow: var(--main-nav-shadow);
+}
+.main-menu {
+  display: flex;
+  width: 100%;
+  flex-direction: var(--menu-flow);
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: var(--space-3xl) 0;
+  background-color: var(--color-mono-0);
+  gap: var(--main-menu-items-gap);
+  visibility: hidden;
+}
+.main-menu .nav-link {
+  font-size: var(--step-1);
+}
+/* Menu Toogle */
+.toggle-menu-label,
+.toggle-menu-checkbox {
+  z-index: 100;
+  position: absolute;
+}
+.toggle-menu-checkbox {
+  visibility: hidden; /* We only want the mechanism :checked */
+}
+.toggle-menu-label {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  gap: var(--space-2xs);
+  background-color: var(--color-mono-0);
+  padding: 1rem;
+}
+.toggle-menu-label .icon {
+  display: flex;
+}
+.toggle-menu-label .icon::before {
+  font-family: 'Material Symbols Outlined';
+  content: "menu";
+}
+:has(.toggle-menu-checkbox:checked) .icon:before {
+  font-family: 'Material Symbols Outlined';
+  content: "close";
+}
+.toggle-menu-label:hover {
+  background-color: var(--color-mono-100);
+}
+
+/* Buttons */
+a.btn {
+  text-decoration: none;
+}
+.btn {
+  font-size: 12px;
+  color: var(--color-white);
+  border-radius: var(--btn-border-radius);
+  padding: var(--btn-padding-base);
+  transition: all var(--transitions-ms) var(--transitions-timing);
+  box-shadow: var(--btn-shadow);
+}
+.btn:hover {
+  background-color: var(--color-white);
+}
+.btn[data-type='primary'] {
+  background-color: var(--color-primary);
+}
+.btn[data-type='primary']:hover {
+  color: var(--color-primary);
+  background-color: var(--color-white);
+}
+
+/* Hero */
+.hero {
+  padding: 0; /* We dont want padding inheritade by Section variables in layout.css */
+  overflow: hidden;
+  text-align: center;
+  aspect-ratio: 1.56; /* Calculated ratio from Figma */
+  max-height: 90vh;
+}
+.hero img {
+  min-width: 100%; /* Lets do it full width even if the rendered image is smaller */
+  object-fit: cover;
+}
+
+/* Call to action */
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-l) var(--space-m);
+  text-align: center;
+  aspect-ratio: 16 / 9; /* The desired width-to-height ratio */
+  background-color: var(--color-secondary);
+}
+.cta h1 {
+  color: var(--color-white);
+}
+
+/* Footer Components */
+.footer-menu {
+  display: flex;
+  list-style: none;
+  flex-direction: var(--menu-flow);
+  padding-left: 0;
+  gap: var(--gap);
+}
+.footer-menu > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer-menu > li > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-item {
+  padding: var(--space-2xs) var(--space-2xs);
+}
+.nav-link {
+  text-decoration: none;
+  color: var(--mono-900);
+}
+
+.nav-item:hover {
+  transition: all var(--transitions-ms) var(--transitions-timing);
+}
+.footer-menu > li > a:hover {
+}

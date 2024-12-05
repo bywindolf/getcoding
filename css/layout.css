@@ -1,0 +1,139 @@
+/* Mobile first, always */
+
+.flow > * + * {
+  /* margin-block-end: var(--space-l); */
+}
+
+/* We want some space to Body */
+.main-header-wrapper,
+.footer,
+section {
+  padding: 0 var(--space-m);
+}
+.section-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: var(--container-max-width);
+  width: 100%;
+}
+
+.main-header {
+  position: fixed; /* This Navis fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 200;
+}
+.main-header-wrapper {
+  padding: var(--space-m) var(--space-m);
+
+  display: block;
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
+}
+/* Let sat div elements to span 12 cols as default */
+div {
+  grid-column: span 12;
+}
+
+.footer {
+  padding: var(--space-l) var(--space-m);
+}
+.footer-menu {
+  grid-column: span 12;
+}
+
+.footer-nav {
+  grid-column: span 12;
+}
+
+/* Hook on resposibe behavior for layout */
+
+@media (max-width: 959px) {
+  .main-header-wrapper {
+    /* height: 100vh; */
+
+  }
+  .main-menu {
+    position: absolute;
+    
+    /* visibility: hidden; */
+  }
+  .main-header-wrapper:has(.toggle-menu-checkbox:checked) .main-menu {
+    visibility: visible;
+  }
+  /* Here we want to add some blurred background to .main-header-wrapper if '.toggle-menu-checkbox' is not checked! */
+  .main-header-wrapper:has(.toggle-menu-checkbox:not(:checked)) .main-menu {
+    visibility: hidden;
+  }
+
+  .main-header-wrapper:has(.toggle-menu-checkbox:checked) .main-menu {
+    visibility: visible;
+  }
+
+  .main-header-wrapper:has(.toggle-menu-checkbox:checked) {
+    background-color: var(--backdrop-filter-color); /* Example background */
+    backdrop-filter: blur(5px);
+    height: 100vh;
+  }
+
+
+
+
+}
+
+@media (min-width: 960px) {
+  /* Trying decouple responsivness behavior to one file may be overwhelming */
+  :root {
+    --menu-flow: row;
+    --btn-padding-base: var(--btn-padding-md);
+  }
+
+  .main-menu {
+    padding: var(--space-xs) 0;
+  }
+
+  .main-header-wrapper {
+    padding: var(--space-xl) var(--space-m);
+  }
+  .toggle-menu-label {
+    visibility: hidden;
+  }
+  .toggle-menu {
+    visibility: hidden;
+  }
+  .main-header {
+  }
+  .main-nav {
+    background-color: transparent;
+  }
+  .main-menu {
+    visibility: visible;
+  }
+  .toggle-menu {
+    visibility: hidden;
+  }
+  .copyright {
+    order: 1;
+    grid-column: 1 / span 3;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .footer-nav {
+    order: 2;
+    grid-column: 5 / span 8;
+  }
+
+  .footer-menu {
+    justify-content: end;
+  }
+}
