@@ -1,7 +1,7 @@
 :root {
-  /* Need to discuss with designer. To find a good ratio here, using 1.25 for now based on 20 +5 -2 */
+  /* Need to discuss with designer. To find a good ratio here, using 1.25 for now based on 20 + 5 -2 */
 
-  /* Utopa */
+  /* Utopia */
   --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
   --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
   --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
@@ -34,7 +34,6 @@
   --color-mono-0: #f2f2f2;
   --color-mono-100: #dcdcdc;
   --color-mono-900: #111111;
-  
 
   --backdrop-filter-color: hsla(0, 0%, 19%, 0.267);
   --backdrop-filter-blur: 10px;
@@ -69,6 +68,6 @@
 
   /* Elements */
   --btn-border-radius: 0.625rem; /* 10 px, i would maybe stick to 8 or 12 */
-  --transitions-ms: 100ms;
+  --transitions-ms: 200ms;
   --transitions-timing: ease-in-out;
 }

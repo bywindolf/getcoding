@@ -13,19 +13,24 @@
 .sr-only {
   display: none;
 }
-
+/* .skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+} */
+/* Our Focus */
 :is(a) {
   --outline-size: max(2px, 0.18em);
   --outline-style: solid;
-  --outline-color: currentColor;
+  --outline-color: var(--color-primary);
   --outline-offset: 0.18em;
+  transition: color var(--transitions-ms) var(--transitions-timing);
 }
 
 :is(a):focus-visible {
   outline: var(--outline-size) var(--outline-style) var(--outline-color);
   outline-offset: var(--outline-offset, var(--outline-size));
-}
-
-body {
-  background-color: var(--color-canvas);
 }

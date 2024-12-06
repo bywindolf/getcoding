@@ -20,7 +20,7 @@ section {
 }
 
 .main-header {
-  position: fixed; /* This Navis fixed */
+  position: fixed; /* This is fixed */
   top: 0;
   left: 0;
   right: 0;
@@ -38,7 +38,7 @@ section {
   display: grid;
   grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
 }
-/* Let sat div elements to span 12 cols as default */
+/* Let set div elements to span 12 cols as default */
 div {
   grid-column: span 12;
 }
@@ -56,37 +56,41 @@ div {
 
 /* Hook on resposibe behavior for layout */
 
-@media (max-width: 959px) {
+@media (max-width: var(--breakpint-desktop)) {
+  /* Initial state: Menu is off-screen to the left */
   .main-header-wrapper {
-    /* height: 100vh; */
-
+    background-color: transparent;
+    height: 0;
+  }
+  .main-header-wrapper:has(.toggle-menu-checkbox:checked) {
+    /* background-color: green; */
+    height: 100vh;
   }
   .main-menu {
     position: absolute;
-    
-    /* visibility: hidden; */
+    transform: translateX(-100vw); /* Off-screen */
+    visibility: hidden; /* Hidden initially */
+    transition: transform 0.3s ease-in-out; /* Smooth slide-in and slide-out */
   }
+
+  /* When checkbox is checked, the menu slides in */
   .main-header-wrapper:has(.toggle-menu-checkbox:checked) .main-menu {
-    visibility: visible;
+    transform: translateX(0); /* Slide to visible position */
+    visibility: visible; /* Make it visible */
+    transition: transform 0.3s ease-in-out; /* Transition the transform property */
   }
-  /* Here we want to add some blurred background to .main-header-wrapper if '.toggle-menu-checkbox' is not checked! */
+
+  /* When checkbox is unchecked, menu slides out */
   .main-header-wrapper:has(.toggle-menu-checkbox:not(:checked)) .main-menu {
+    transform: translateX(100vw); /* Slide the menu off-screen */
+    visibility: visible; /* Keep it visible to allow for the transition */
+    transition: transform 0.3s ease-in-out, visibility 0s linear 0.3s; /* Transition transform, visibility delay */
+  }
+
+  /* After transition completes, hide the menu */
+  .main-header-wrapper:has(.toggle-menu-checkbox:not(:checked)) .main-menu.hidden {
     visibility: hidden;
   }
-
-  .main-header-wrapper:has(.toggle-menu-checkbox:checked) .main-menu {
-    visibility: visible;
-  }
-
-  .main-header-wrapper:has(.toggle-menu-checkbox:checked) {
-    background-color: var(--backdrop-filter-color); /* Example background */
-    backdrop-filter: blur(5px);
-    height: 100vh;
-  }
-
-
-
-
 }
 
 @media (min-width: 960px) {

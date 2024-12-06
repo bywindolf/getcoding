@@ -3,15 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get Coding! | Assingment Week 49</title>
+    <title>Get Coding! | Assignment Week 49</title>
     <link href="/css/main.css" rel="stylesheet" />
   </head>
   <body class="flow">
+    <!-- For 'vertical rythm'. Feature may be added.-->
     <header class="main-header">
+      <!-- <a href="#main" class="skip-link">Skip to main content</a> -->
       <div class="main-header-wrapper">
-        <label for="toggle-menu" class="toggle-menu-label" tabindex="0"><span class="icon"></span>Menu</label>
-        <input type="checkbox" id="toggle-menu" class="toggle-menu-checkbox" />
-        <nav class="main-nav" aria-hidden="true">
+        <label for="toggle-menu" class="toggle-menu-label" tabindex="0" role="button" aria-label="Toggle menu" aria-controls="main-nav"><span class="icon"></span>Menu</label>
+        <input type="checkbox" id="toggle-menu" class="toggle-menu-checkbox" aria-hidden="true" />
+        <nav class="main-nav" aria-labelledby="toggle-menu">
           <ul class="main-menu">
             <li class="nav-item"><a class="nav-link" href="#learn-to-code">Learn to code</a></li>
             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
@@ -20,21 +22,23 @@
         </nav>
       </div>
     </header>
-    <section class="hero">
-      <figure>
-        <img src="/assets/images/getcoding.png" alt="A magazine saying 'Get Coding!'" />
-      </figure>
-    </section>
-    <section id="learn-to-code" class="cta">
-      <div class="section-wrapper">
-        <h1>Do you want to learn how to code a website?</h1>
-        <a href="#" class="btn" data-type="primary">Read more</a>
-      </div>
-    </section>
+    <main id="main">
+      <section class="hero">
+        <figure>
+          <img src="/assets/images/getcoding-cropped.png" alt="A magazine saying 'Get Coding!'" />
+        </figure>
+      </section>
+      <section id="learn-to-code" class="cta">
+        <div class="section-wrapper">
+          <h1>Do you want to learn how to code a website?</h1>
+          <a href="#" class="btn" role="button" data-type="primary">Read more</a>
+        </div>
+      </section>
+    </main>
     <footer class="footer grid">
       <nav class="footer-nav">
-        <h2 class="sr-only">Footer Links</h2>
         <!-- Optional for better screen reader support -->
+        <h2 class="sr-only">Footer Links</h2>
         <ul class="footer-menu">
           <li class="nav-item">
             <a class="nav-link" href="#">About us</a>
@@ -47,23 +51,8 @@
           </li>
         </ul>
       </nav>
-      <div class="copyright">&copy <time datetime="YY">2024</time></div>
+      <div class="copyright">&copy <time datetime="2024">2024</time></div>
     </footer>
   </body>
-
-  <script>
-    // Get references to the label and checkbox
-    const toggleLabel = document.querySelector('.toggle-menu-label');
-    const toggleCheckbox = document.getElementById('toggle-menu');
-
-    const mainMenu = document.querySelector('.main-menu');
-
-    // Add event listener for 'Enter', 'Space', 'ArrowUp', 'ArrowDown' key press when the label is focused
-    toggleLabel.addEventListener('keydown', function (event) {
-      // Toggle the checkbox state on Enter or Space key
-      if (event.key === 'Enter' || event.key === ' ') {
-        toggleCheckbox.checked = !toggleCheckbox.checked;
-      }
-    });
-  </script>
+  <script src="/js/main.js"></script>
 </html>

@@ -35,22 +35,22 @@
   gap: var(--space-2xs);
   background-color: var(--color-mono-0);
   padding: 1rem;
+  transition: all var(--transitions-ms) var(--transitions-timing);
 }
 .toggle-menu-label .icon {
   display: flex;
 }
 .toggle-menu-label .icon::before {
   font-family: 'Material Symbols Outlined';
-  content: "menu";
+  content: 'menu';
 }
 :has(.toggle-menu-checkbox:checked) .icon:before {
   font-family: 'Material Symbols Outlined';
-  content: "close";
+  content: 'close';
 }
 .toggle-menu-label:hover {
   background-color: var(--color-mono-100);
 }
-
 /* Buttons */
 a.btn {
   text-decoration: none;
@@ -73,12 +73,10 @@ a.btn {
   color: var(--color-primary);
   background-color: var(--color-white);
 }
-
 /* Hero */
 .hero {
   padding: 0; /* We dont want padding inheritade by Section variables in layout.css */
   overflow: hidden;
-  text-align: center;
   aspect-ratio: 1.56; /* Calculated ratio from Figma */
   max-height: 90vh;
 }
@@ -86,7 +84,6 @@ a.btn {
   min-width: 100%; /* Lets do it full width even if the rendered image is smaller */
   object-fit: cover;
 }
-
 /* Call to action */
 .cta {
   display: flex;
@@ -100,8 +97,7 @@ a.btn {
 .cta h1 {
   color: var(--color-white);
 }
-
-/* Footer Components */
+/* Footer */
 .footer-menu {
   display: flex;
   list-style: none;
@@ -120,7 +116,6 @@ a.btn {
   align-items: center;
   text-decoration: none;
 }
-
 .nav-item {
   padding: var(--space-2xs) var(--space-2xs);
 }
@@ -128,9 +123,7 @@ a.btn {
   text-decoration: none;
   color: var(--mono-900);
 }
-
-.nav-item:hover {
+.nav-item:hover .nav-link {
+  color: var(--color-primary);
   transition: all var(--transitions-ms) var(--transitions-timing);
-}
-.footer-menu > li > a:hover {
 }
